@@ -13,4 +13,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require bootstrap-sprockets
 //= require_tree .
+//= require websocket_rails/main
+
+$( document ).ready(function() {
+
+	var dispatcher = new WebSocketRails('localhost:9292/websocket');
+	console.log("listening...")
+	channel = dispatcher.subscribe('searchresults');
+	channel.bind('startsearch', function(task) {
+		$("#name_" + task[1]).html(task[0] + "." + task[1])
+	});
+	channel.bind('completed_found', function(task) {
+		$("#searchres_" + task[1]).html('<i class="fa fa-thumbs-o-down"></i> exists')
+	});
+	channel.bind('completed_notfound', function(task) {
+		$("#searchres_" + task[1]).html('<i class="fa fa-thumbs-o-up"></i>appears free!')
+	});
+});

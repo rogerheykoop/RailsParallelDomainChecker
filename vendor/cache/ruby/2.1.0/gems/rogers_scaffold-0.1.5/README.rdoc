@@ -1,0 +1,47 @@
+= rogers_scaffold
+
+A scaffold generator for Rails 4 that uses simple_form, bootstrap, datatables
+
+== Features
+
+* Automatically generates the appropriate model associations for ActiveRecord
+
+== Rails versions
+
+3.x, 4.x
+
+== Install
+
+Put this line in your Gemfile:
+  gem 'rogers_scaffold'
+
+Then bundle:
+  % bundle
+
+== Usage
+
+  % rails generate rogers_scaffold:rogers_scaffold resource_name [field:type field:type] [options]
+
+== Example
+
+
+== Options
+
+Basically same as the original scaffold.
+
+== TODO / known issues
+
+
+== Contributing to nested_scaffold
+
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+
+== Copyright
+
+Copyright (c) 2014 Roger Heykoop. See LICENSE.txt for
+further details.
+

@@ -1,0 +1,8 @@
+<h1>Edit <%= singular_table_name %></h1>
+
+<%%= render 'form' %>
+
+
+<%%= link_to fa_icon("info-circle",:text=>"Show" ), @<%= singular_table_name %>,:class=>"btn btn-primary" %> 
+<%%= link_to fa_icon("arrow-left",:text=>'Back'), <%= index_helper %>_path,:class=>"btn btn-info" %>
+

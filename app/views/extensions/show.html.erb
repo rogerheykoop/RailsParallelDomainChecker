@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<dl class="dl-horizontal">
+</dl>
+
+<%= extension[:name] %>
+
+<%= link_to fa_icon("edit",:text=>"Edit" ), edit_extension_path(@extension),:class=>"btn btn-warning" %>
+<%= link_to fa_icon("arrow-left",:text=>'Back'), extensions_path,:class=>"btn btn-info" %>

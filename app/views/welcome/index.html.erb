@@ -1,0 +1,36 @@
+<div class="jumbotron">
+<h1>Search domainnames</h1>
+<P>Search for many domain name extensions at once. Enter a name without the extension to search all available extensions. </p>
+
+<%= form_tag domainsearch_path, {method: :get, :class => "form-inline", :remote=>true } do %>
+  <div class="form-group">
+    <label class="sr-only" for="searchdomain">Name to search</label>
+    <div class="input-group">
+      <div class="input-group-addon">www.</div>
+      <input type="text" class="form-control" name="name" id="searchdomain" placeholder="Name-to-find">
+      <div class="input-group-addon">.???</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+<% end %>
+</div>
+
+<i class="icon-spinner icon-spin"></i>
+<div id="searchresults">
+<%
+	i = 0
+	for ext in @extensions
+%>
+<div class="row">
+	<div class="col-md-2">
+		<div class="btn btn-default btn-sm btn-block"><%= ext[:name] %></div>
+	</div>
+	<div class="col-md-3" id="name_<%= ext[:name] %>"></div>
+	<div class="col-md-3" id="searchres_<%= ext[:name] %>"></div>
+</div>
+<%
+	end
+%>
+
+
+</div>

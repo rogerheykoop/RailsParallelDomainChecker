@@ -1,0 +1,16 @@
+<p id="notice"><%%= notice %></p>
+
+<dl class="dl-horizontal">
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+  <dt>
+    <%= attribute.human_name %>:
+  </dt>
+  <dd>
+    <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+  </dd>
+<% end -%>
+</dl>
+
+
+<%%= link_to fa_icon("edit",:text=>"Edit" ), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>),:class=>"btn btn-warning" %>
+<%%= link_to fa_icon("arrow-left",:text=>'Back'), <%= index_helper %>_path,:class=>"btn btn-info" %>

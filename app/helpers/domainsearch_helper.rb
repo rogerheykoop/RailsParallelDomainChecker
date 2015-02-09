@@ -1,0 +1,2 @@
+module DomainsearchHelper
+end

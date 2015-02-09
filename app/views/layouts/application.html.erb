@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
   <title>RailsParallelDomainChecker</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <header>
+    	  <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+	      <%= render 'layouts/messages' %>
+	      <div class="container">
+	      	<%= yield %>
+	  	  </div>
+    </main>
+	<footer>
+		<p class="newscycle lightcolor">&copy; <%= Date.today.year.to_s %> </p>
+	</footer>
+  </body>
 </html>
+

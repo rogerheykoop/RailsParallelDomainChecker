@@ -1,0 +1,26 @@
+<h1>Extensions</h1>
+
+<%= link_to fa_icon("plus-circle",:text=>'New Extension'), new_extension_path, :class=>"btn btn-primary btn-large" %>
+
+<br>
+
+<table class="table table-striped nowrap datatable">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @extensions.each do |extension| %>
+      <tr>
+        <td><%= extension[:name] %></td>
+        <td><%= link_to (fa_icon "info-circle",:text=>"Show") , extension,:class=>"btn btn-primary" %></td>
+        <td><%= link_to (fa_icon "edit",:text=>"Edit" ), edit_extension_path(extension),:class=>"btn btn-warning" %></td>
+        <td><%= link_to (fa_icon "trash-o",:text=>"Delete" ), extension, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
