@@ -19,9 +19,6 @@
 //= require websocket_rails/main
 
 $( document ).ready(function() {
-	$('.datatable').DataTable({
-		    "paging": false
-	 });
 
 	var dispatcher = new WebSocketRails('localhost:9292/websocket');
 	channel = dispatcher.subscribe('searchresults');
