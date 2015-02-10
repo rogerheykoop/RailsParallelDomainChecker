@@ -151,9 +151,13 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed_dump (3.2.1)
+      activerecord (~> 4)
+      activesupport (~> 4)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    simpleidn (0.0.5)
     slop (3.6.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -218,7 +222,9 @@ DEPENDENCIES
   rogers_scaffold
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  seed_dump
   simple_form
+  simpleidn
   sqlite3
   sucker_punch (~> 1.0)
   turbolinks

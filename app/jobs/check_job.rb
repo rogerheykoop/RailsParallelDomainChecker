@@ -1,6 +1,7 @@
 class CheckJob
   include SuckerPunch::Job
   require 'dnsruby'
+  workers 16
 
   def perform(name,ext)
     WebsocketRails[:searchresults].trigger 'startsearch', [name,ext]

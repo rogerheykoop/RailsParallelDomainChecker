@@ -16,7 +16,7 @@
   <tbody>
     <% @extensions.each do |extension| %>
       <tr>
-        <td><%= extension[:name] %></td>
+        <td><%= SimpleIDN.to_unicode(extension[:name].downcase) %></td>
         <td><%= link_to (fa_icon "info-circle",:text=>"Show") , extension,:class=>"btn btn-primary" %></td>
         <td><%= link_to (fa_icon "edit",:text=>"Edit" ), edit_extension_path(extension),:class=>"btn btn-warning" %></td>
         <td><%= link_to (fa_icon "trash-o",:text=>"Delete" ), extension, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-danger" %></td>

@@ -15,21 +15,23 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap-sprockets
-//= require_tree .
+//= require punycode
 //= require websocket_rails/main
 
 $( document ).ready(function() {
+	$('.datatable').DataTable({
+		    "paging": false
+	 });
 
 	var dispatcher = new WebSocketRails('localhost:9292/websocket');
-	console.log("listening...")
 	channel = dispatcher.subscribe('searchresults');
 	channel.bind('startsearch', function(task) {
-		$("#name_" + task[1]).html(task[0] + "." + task[1])
+		$("#name_" + task[1]).html(punycode.toUnicode(task[0] + "." + task[1]))
 	});
 	channel.bind('completed_found', function(task) {
-		$("#searchres_" + task[1]).html('<i class="fa fa-thumbs-o-down"></i> exists')
+		$("#searchres_" + task[1]).html('<i class="fa fa-thumbs-o-down"></i> <span class="label label-danger">Exists</span>');
 	});
 	channel.bind('completed_notfound', function(task) {
-		$("#searchres_" + task[1]).html('<i class="fa fa-thumbs-o-up"></i>appears free!')
+		$("#searchres_" + task[1]).html('<i class="fa fa-thumbs-o-up"></i> <span class="label label-success">Appears free</span>');
 	});
 });

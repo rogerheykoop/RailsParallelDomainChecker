@@ -29,7 +29,7 @@ gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'simpleidn'
 gem 'sucker_punch', '~> 1.0'
 gem 'redis'
 gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
@@ -38,6 +38,7 @@ gem 'rogers_scaffold'
 gem 'simple_form'
 gem 'dnsruby'
 gem 'websocket-rails'
+gem 'seed_dump'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

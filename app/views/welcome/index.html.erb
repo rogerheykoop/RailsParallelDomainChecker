@@ -17,20 +17,24 @@
 
 <i class="icon-spinner icon-spin"></i>
 <div id="searchresults">
+  <table class="table table-striped">
+    <thead>
+      <tr><th>TLD</th><th>Domain name</th><th>Result</th></tr>
+    </thead>
+    <tbody>
 <%
 	i = 0
 	for ext in @extensions
 %>
-<div class="row">
-	<div class="col-md-2">
-		<div class="btn btn-default btn-sm btn-block"><%= ext[:name] %></div>
-	</div>
-	<div class="col-md-3" id="name_<%= ext[:name] %>"></div>
-	<div class="col-md-3" id="searchres_<%= ext[:name] %>"></div>
-</div>
+  <tr id="row_<%= ext[:name] %>">
+		<td><%= SimpleIDN.to_unicode(ext[:name].downcase) %></td>
+	  <td id="name_<%= ext[:name] %>"></td>
+	  <td id="searchres_<%= ext[:name] %>"></td>
+  </tr>
 <%
 	end
 %>
-
+  </tbody>
+</table>
 
 </div>

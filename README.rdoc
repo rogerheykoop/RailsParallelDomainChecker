@@ -13,6 +13,8 @@ To run:
 
 * bundle install
 
+* rake db:seed to seed the database with an enormous list of TLD's
+
 * enter 'puma' to start the server
 
 * go to http://localhost:9292 to view
