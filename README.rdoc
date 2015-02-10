@@ -1,28 +1,19 @@
-== README
+== About
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an example Rails 4 project that implements a parallel running multiple domain
+name checker.
+Each check for each TLD is handed over to a worker thread (using sucker_punch).
+It uses DNS to test against the SOA record of a list of TLD's (extensions).
+When the test is done it uses websockets to update the users screen in real time.
 
-Things you may want to cover:
+This is just a demonstrator, so expect nothing fancy. Have fun. :-)
 
-* Ruby version
+To run:
+* Clone this project
 
-* System dependencies
+* bundle install
 
-* Configuration
+* enter 'puma' to start the server
 
-* Database creation
+* go to http://localhost:9292 to view
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
